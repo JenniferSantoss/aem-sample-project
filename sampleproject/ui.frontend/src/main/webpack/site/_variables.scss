@@ -2,10 +2,16 @@
 //== Font
 
 $font-family:           "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-serif:     "Asar",Georgia, "Times New Roman", Times, serif;
 $font-size:             16px;
 $font-height:           1.5;
+$font-size-medium:		  var(--fontSizeMedium, 18px);
+$font-family-serif:       var(--fontFamilySerif);
+$font-size-xsmall:		  var(--fontSizeXSmall, 12px);
 
 //== Color
+
+$gray:                   #696969;
 
 // Normal mode
 $color-foreground:      #202020;
