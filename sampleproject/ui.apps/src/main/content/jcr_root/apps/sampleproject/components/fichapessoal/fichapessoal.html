@@ -1,3 +1,14 @@
+<div>
+    <h1>Ficha Pessoal para Cadastro</h1>
+    <h2>Nome Completo: </h2>
+    <p>${properties.name}<p>
+    <h2>Apelido: </h2>
+    <p>${properties.nickname}<p>
+    <h2>Idade: </h2>
+    <p>${properties.idade}<p>
+</div>
+
+
 <sly 
     data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"
     data-sly-call="${placeholderTemplate.placeholder @ isEmpty=!hasContent}"

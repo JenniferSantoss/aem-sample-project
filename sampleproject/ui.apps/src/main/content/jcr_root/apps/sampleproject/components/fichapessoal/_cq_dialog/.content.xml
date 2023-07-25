@@ -33,17 +33,17 @@
 					      <items jcr:primaryType="nt:unstructured">
 
 						    <!-- Examples of Dialogs Field-->
-							<titleGroup
-								granite:hide="${cqDesign.titleHidden}"
+							<titleGroup								
 								jcr:primaryType="nt:unstructured"
 								sling:resourceType="granite/ui/components/coral/foundation/well">
 								<items jcr:primaryType="nt:unstructured">
 									<name
+										granite:title="${cqDesign.titleType}"
 										jcr:primaryType="nt:unstructured"
 										sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
 										fieldDescription="Digite o seu nome Completo"
 										fieldLabel="Name"
-										name="./name"
+										name="./name"										
 										required="true"/>
 									<titleType
 										granite:hide="${!cqDesign.showTitleType or (empty cqDesign.allowedHeadingElements and empty cqDesign.allowedTypes)}"
