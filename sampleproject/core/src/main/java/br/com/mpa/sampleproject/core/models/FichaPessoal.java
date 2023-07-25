@@ -17,8 +17,7 @@ public class FichaPessoal {
     @ValueMapValue
     private String nickname;
 
-    @ValueMapValue
-    private String idade;
+
 
     public String getName() {
         return name;
@@ -28,7 +27,5 @@ public class FichaPessoal {
         return nickname;
     }
 
-    public String getIdade() {
-        return idade;
-    }
+
 }

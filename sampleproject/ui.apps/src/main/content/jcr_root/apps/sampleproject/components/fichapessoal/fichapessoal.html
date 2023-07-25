@@ -5,11 +5,11 @@
     <h2>Apelido: </h2>
     <p>${properties.nickname}<p>
     <h2>Idade: </h2>
-    <p>${properties.idade}<p>
+    <p>${'dd-MM-YYYY' @ format=properties.idade}<p>
 </div>
 
 
-<sly 
-    data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"
-    data-sly-call="${placeholderTemplate.placeholder @ isEmpty=!hasContent}"
+<sly
+        data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"
+        data-sly-call="${placeholderTemplate.placeholder @ isEmpty=!hasContent}"
 ></sly>
