@@ -65,7 +65,7 @@
                     <tab2 
 					granite:hide="${cqDesign.idadeHidden}"
 					jcr:primaryType="nt:unstructured"
-					jcr:title="Idade"
+					jcr:title="Aniversario"
 					sling:resourceType="granite/ui/components/coral/foundation/container"
 					margin="{Boolean}true">
 					<items jcr:primaryType="nt:unstructured">
@@ -78,14 +78,14 @@
 					      <items jcr:primaryType="nt:unstructured">
 
 						    <!-- Examples of Dialogs Field-->
-						    <idade
+						    <aniversario
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"								
                                 displayedFormat="DD-MM-YYYY"
 								minYear="1970"
     							maxYear="2023"
-                                fieldLabel="Idade"
-                                name="./idade"
+                                fieldLabel="Aniversario"
+                                name="./aniversario"
                                 type="date"
                                 typeHint="Date"/>							
 					      </items>

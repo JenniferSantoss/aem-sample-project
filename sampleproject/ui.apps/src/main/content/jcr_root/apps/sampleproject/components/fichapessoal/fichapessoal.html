@@ -1,15 +1,17 @@
-<div>
+<div
+    data-sly-use.fichapessoal="br.com.mpa.sampleproject.core.models.FichaPessoal"
+    data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"
+    data-sly-test.hasContent="${!fichapessoal.empty}">
     <h1>Ficha Pessoal para Cadastro</h1>
     <h2>Nome Completo: </h2>
-    <p>${properties.name}<p>
+    <p>${fichapessoal.name}<p>
     <h2>Apelido: </h2>
-    <p>${properties.nickname}<p>
-    <h2>Idade: </h2>
-    <p>${'dd-MM-YYYY' @ format=properties.idade}<p>
+    <p>${fichapessoal.nickname}<p>
+    <h2>Aniversario: </h2>
+    <p>${'dd-MM-YYYY' @ format=properties.aniversario}<p>
 </div>
 
 
 <sly
-        data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html"
-        data-sly-call="${placeholderTemplate.placeholder @ isEmpty=!hasContent}"
+       data-sly-call="${placeholderTemplate.placeholder @ isEmpty=!hasContent}"
 ></sly>
