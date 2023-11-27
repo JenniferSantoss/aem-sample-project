@@ -17,6 +17,9 @@ public class FichaPessoal {
     @ValueMapValue
     private String nickname;
 
+    @ValueMapValue
+    private Integer aniversario;
+
 
 
     public String getName() {
@@ -27,5 +30,7 @@ public class FichaPessoal {
         return nickname;
     }
 
-
+    public Integer getAniversario() {
+        return aniversario;
+    }
 }
