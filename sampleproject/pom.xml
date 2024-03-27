@@ -45,10 +45,8 @@
             
     <module>ui.content</module>
             
-    <module>it.tests</module>
-            
-    <module>dispatcher</module>
-            
+    <module>it.tests</module>            
+           
     <module>ui.tests</module>
       
   </modules>
