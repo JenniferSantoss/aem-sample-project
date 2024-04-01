@@ -13,10 +13,11 @@
 	# (feature supported since dispatcher build 2.6.3.5222)
 	/clientheaders {
 		$include "../clientheaders/clientheaders.any"
+		$include "../clientheaders/sampleproject_clientheaders.any"
 	}
 	# hostname globbing for farm selection (virtual domain addressing)
 	/virtualhosts {
-		$include "../virtualhosts/virtualhosts.any"
+		$include "../virtualhosts/sampleproject_virtualhosts.any"
 	}
 	# the load will be balanced among these render instances
 	/renders {
