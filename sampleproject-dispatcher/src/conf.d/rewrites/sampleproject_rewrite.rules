@@ -1,0 +1,31 @@
+
+# regra 1: encontrar a URL no publish quando usuário digitar "...us/en"
+RewriteCond %{REQUEST_URI} !(.webp|.jpe?g|.png|.svg|.xml|.model.json)$
+RewriteCond %{REQUEST_URI} !^/(apps|bin|conf|etc|libs|system|temp|var)$
+RewriteCond %{REQUEST_URI} ^/(us/en|us/en.html|/content/sampleproject/us/en|)$ 
+RewriteRule ^/(us/en|us/en.html|/content/sampleproject/us/en|)$ /content/sampleproject/us/en.html [PT,L,QSA,NC]
+
+# regra 2: Remove a pasta (/content/sampleproject/) para permitir que o usuario ache a mesma pagina equivalente no publish usando apenas o caminho reduzido === "/content/sampleproject/us/en.html" -> "/us/en.html"
+RewriteCond %{REQUEST_URI} !(.webp|.jpe?g|.png|.svg|.xml|.model.json)$
+RewriteCond %{REQUEST_URI} !^/(apps|bin|conf|etc|libs|system|temp|var)$
+RewriteCond %{REQUEST_URI} !^/(us/en/)(.*)$
+RewriteCond %{REQUEST_URI} ^/(content/sampleproject/us/en)(.*)$
+RewriteRule ^/content/sampleproject/(.*)$ $1 [NE,NC,L,R=301] 
+
+# regra 3: Remove o html ou a barra para que o usuário encontre a pagina mesmo se não adicionar o html no final === "/us/en.html" -> "/us/en"
+RewriteCond %{REQUEST_URI} !(.webp|.jpe?g|.png|.svg|.xml|.model.json)$
+RewriteCond %{REQUEST_URI} !^/(apps|bin|content|conf|etc|libs|system|temp|var)$
+RewriteCond %{REQUEST_URI} ^(.*)(.html|/|)$
+RewriteRule ^(.*)(.html|/)$ $1 [R=302,NC,L,QSA]
+
+# regra 4: Volta a URL completa para que seja encontrada no publish === "/us/en" -> "/content/sampleproject/us/en.html"
+RewriteCond %{REQUEST_URI} !^/(apps|bin|content|conf|etc|libs|system|temp|var)
+RewriteCond %{REQUEST_URI} !(.html|.webp|.jpe?g|.png|.svg|.xml|.model.json)$
+RewriteCond %{REQUEST_URI} ^/(us/en)(.*)$
+RewriteRule ^/(.*)$ /content/sampleproject/$1.html [PT,L,QSA,NC] 
+
+# regra 5: "/us/en/image.png" -> "/content/sampleproject/us/en/image.png"
+RewriteCond %{REQUEST_URI} !^/(apps|bin|content|conf|etc|libs|system|temp|var)
+RewriteCond %{REQUEST_URI} !(.html|.xml|.model.json)$
+RewriteCond %{REQUEST_URI} ^/(us/en)(.*)$
+RewriteRule ^/(.*)$ /content/sampleproject/$1 [PT,L,QSA,NC] 

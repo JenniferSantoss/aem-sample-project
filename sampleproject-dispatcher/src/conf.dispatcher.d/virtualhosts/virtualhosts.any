@@ -5,4 +5,7 @@
 # By default, it includes the default list of virtual hosts.
 #
 
-$include "./default_virtualhosts.any"
+"${DEV_PUBLISH_DNS}"
+"${STAGE_PUBLISH_DNS}"
+"${PROD_PUBLISH_DNS}"
+
