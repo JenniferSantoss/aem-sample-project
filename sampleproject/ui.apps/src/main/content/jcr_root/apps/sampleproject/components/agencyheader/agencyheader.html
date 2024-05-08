@@ -1,0 +1,6 @@
+
+<div data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html">
+    <h1>${properties.title}</h1>
+</div>
+
+<sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=!(properties.title), emptyTextAppend='Component Header'}"></sly>
