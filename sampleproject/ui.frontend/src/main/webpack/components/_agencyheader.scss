@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.cpm-header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+.cpm-header__container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.cpm-header__title {
+    background-color: #333;
+    font-size: 2rem;
+    padding: 1rem 0;
+    margin-bottom: 0;
+}
+.cpm-header__nav {
+    background-color: #444;
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem 0;
+}
+.cpm-header__menu {
+    list-style: none;
+    display: flex;
+}
+.cpm-header__item {
+    margin-right: 1.5rem;
+}
+.cpm-header__item:last-child {
+    margin-right: 0;
+}
+.cpm-header__link {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.cpm-header__link:hover {
+    color: #f0a500;
+}

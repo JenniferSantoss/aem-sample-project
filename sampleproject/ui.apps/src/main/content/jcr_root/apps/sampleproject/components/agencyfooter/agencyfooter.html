@@ -1,0 +1,9 @@
+<div class="cpm-footer"
+     data-sly-use.agencyfooter="br.com.mpa.sampleproject.core.models.AgencyFooter"
+     data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-test="${agencyfooter.title}">
+    <div class="cpm-footer__container">
+        <p class="cpm-footer__text">${agencyfooter.title}</p>
+    </div>
+</div>
+<sly data-sly-call="${templates.placeholder @ isEmpty=!agencyfooter.title}"></sly>

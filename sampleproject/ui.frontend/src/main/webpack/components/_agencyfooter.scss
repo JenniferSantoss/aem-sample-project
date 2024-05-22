@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+.cpm-footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+.cpm-footer__container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.cpm-footer__text {
+    font-size: 1rem;
+}

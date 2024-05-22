@@ -1,0 +1,22 @@
+<div class="cpm-about"
+     style="background-color: ${agencyabout.backgroundContainer @ context = 'styleToken'}"
+     data-sly-use.agencyabout="br.com.mpa.sampleproject.core.models.AgencyAbout"
+     data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-test="${agencyabout.title}">
+    <div class="cpm-about__container">
+        <div class="cpm-about__image">
+            <img src="${properties.imagePath @ context = 'uri'}" alt="${agencyabout.alt}">
+        </div>
+        <div class="cpm-about__content">
+            <h2 class="cpm-about__title">${agencyabout.title}</h2>
+            <div class="cpm-about__text">${agencyabout.description @ context='html'}</div>
+            <div class="cpm-about__button-container">
+                <button class="cpm-about__button" style="background-color: ${agencyabout.buttonBackground @ context = 'styleToken'}">
+                    <a href="${agencyabout.buttonLink @ context = 'uri'}">${agencyabout.buttonText}</a>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<sly data-sly-call="${templates.placeholder @ isEmpty=!agencyabout.title}"></sly>

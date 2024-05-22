@@ -1,0 +1,16 @@
+<div class="cpm-services"
+     data-sly-use.agencyservices="br.com.mpa.sampleproject.core.models.AgencyServices"
+     data-sly-use.child="./cards/card.html"
+     data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-test="${agencyservices.title}">
+    <div class="cpm-services__container">
+        <h2 class="cpm-services__title">${agencyservices.title}</h2>
+        <div class="cpm-services__cards">
+            <sly data-sly-list="${agencyservices.cards}">
+                <sly data-sly-call="${child.cardTemplate @ item=item}"/>
+            </sly>
+        </div>
+    </div>
+</div>
+
+<sly data-sly-call="${templates.placeholder @ isEmpty=!agencyservices.title}"></sly>

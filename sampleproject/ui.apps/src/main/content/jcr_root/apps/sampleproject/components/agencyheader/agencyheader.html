@@ -1,5 +1,19 @@
+<div class="cpm-header"
+     data-sly-use.agencyheader="br.com.mpa.sampleproject.core.models.AgencyHeader"
+     data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-test="${agencyheader.title}">
+    <div class="cpm-header__container">
+        <h1 class="cpm-header__title"
+            style="color: ${agencyheader.colorTitle @ context='styleToken'}; background-color: ${agencyheader.backgroundTitle @ context='styleToken'};"
+        >${agencyheader.title}</h1>
+        <nav class="cpm-header__nav">
+            <ul class="cpm-header__menu">
+                <sly data-sly-list="${agencyheader.links}">
+                    <li class="cpm-header__item"><a href="${item.linkHref @ context = 'uri'}" class="cpm-header__link">${item.linkName}</a></li>
+                </sly>
+            </ul>
+        </nav>
+    </div>
+</div>
 
-<div data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html">
-    <h1>${properties.title}</h1>
-
-<sly data-sly-call="${placeholderTemplate.placeholder @ isEmpty=!(properties.title), emptyTextAppend='Component Header'}"></sly>
+<sly data-sly-call="${templates.placeholder @ isEmpty=!agencyheader.title}"></sly>
